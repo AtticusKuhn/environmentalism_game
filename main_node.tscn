@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://player.gd" type="Script" id=1]
+[ext_resource path="res://player.jpeg" type="Texture" id=2]
+[ext_resource path="res://CO2.gd" type="Script" id=3]
+
+[node name="main_node" type="Node2D"]
+
+[node name="player" type="Sprite" parent="."]
+
+[node name="icon" type="Sprite" parent="player"]
+position = Vector2( 362.328, 219.216 )
+scale = Vector2( 0.15106, 0.14441 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Carbon" type="RichTextLabel" parent="."]
+margin_left = 67.1867
+margin_top = 24.4746
+margin_right = 235.187
+margin_bottom = 105.475
+rect_scale = Vector2( 1.91467, 2.34571 )
+bbcode_text = "there are 100 tonnes of co2 in the atmosphere"
+tab_size = 10
+text = "there are 100 tonnes of co2 in the atmosphere"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="RichTextLabel" parent="."]
+margin_left = 376.0
+margin_top = 18.0
+margin_right = 634.0
+margin_bottom = 95.0
+rect_scale = Vector2( 1.68209, 2.39544 )
+text = "To move use the arrow keys. To plant a tree press space. Your goal is to remove all the co2 from the atmosphere"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="plant_tree" from="player/icon" to="Carbon" method="_on_icon_plant_tree"]

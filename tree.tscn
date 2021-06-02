@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://tree.jpg" type="Texture" id=1]
+[ext_resource path="res://tree.gd" type="Script" id=2]
+
+[node name="tree" type="Node2D"]
+scale = Vector2( 0.292823, 0.103626 )
+
+[node name="Tree" type="Sprite" parent="."]
+position = Vector2( 183.071, -63.5987 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
